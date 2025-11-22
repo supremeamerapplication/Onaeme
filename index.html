@@ -322,7 +322,7 @@
         /* Birthday Elements */
         .birthday-notice {
             position: fixed;
-            top: 20px;
+            top: 90px;
             right: 20px;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: white;
@@ -903,6 +903,118 @@
             color: var(--text-light);
         }
 
+        /* Cake Animation */
+        .cake-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2001;
+            text-align: center;
+            display: none;
+        }
+
+        .cake-container.active {
+            display: block;
+        }
+
+        .cake {
+            position: relative;
+            width: 200px;
+            height: 120px;
+            margin: 0 auto 20px;
+        }
+
+        .cake-base {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 160px;
+            height: 40px;
+            background: #e87d7d;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .cake-middle {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 40px;
+            background: #f5a5a5;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .cake-top {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 40px;
+            background: #ffc4c4;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .candle {
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 20px;
+            background: #fff;
+            border-radius: 3px;
+        }
+
+        .flame {
+            position: absolute;
+            bottom: 140px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 15px;
+            background: #ff9900;
+            border-radius: 50% 50% 20% 20%;
+            animation: flicker 0.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(1.1); }
+        }
+
+        .countdown {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .cut-cake-btn {
+            margin-top: 20px;
+        }
+
+        .celebration-image {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: 2002;
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.8);
+            transition: transform 1s ease;
+        }
+
+        .celebration-image.active {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
         /* Responsive Design */
         @media (max-width: 992px) {
             h1 {
@@ -987,6 +1099,13 @@
                 height: 50px;
                 font-size: 1.5rem;
             }
+            
+            .birthday-notice {
+                top: 80px;
+                right: 10px;
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1013,6 +1132,36 @@
             .birthday-content {
                 padding: 20px;
                 margin: 20px;
+            }
+            
+            .cake {
+                width: 150px;
+                height: 90px;
+            }
+            
+            .cake-base {
+                width: 120px;
+                height: 30px;
+            }
+            
+            .cake-middle {
+                width: 105px;
+                height: 30px;
+                bottom: 30px;
+            }
+            
+            .cake-top {
+                width: 90px;
+                height: 30px;
+                bottom: 60px;
+            }
+            
+            .candle {
+                bottom: 90px;
+            }
+            
+            .flame {
+                bottom: 105px;
             }
         }
     </style>
@@ -1327,9 +1476,25 @@
             <p>Wishing you a fantastic birthday filled with joy, success, and all the happiness you bring to others!</p>
             <p>Thank you for being an amazing TikTok coach and community builder.</p>
             <p>May your special day be as wonderful as you are!</p>
-            <button class="btn" id="playBirthdaySound">Play Birthday Song</button>
+            <button class="btn cut-cake-btn" id="cutCakeBtn">Cut the Birthday Cake!</button>
         </div>
     </div>
+
+    <!-- Cake Animation -->
+    <div class="cake-container" id="cakeContainer">
+        <div class="cake">
+            <div class="cake-base"></div>
+            <div class="cake-middle"></div>
+            <div class="cake-top"></div>
+            <div class="candle"></div>
+            <div class="flame"></div>
+        </div>
+        <div class="countdown" id="countdown">10</div>
+        <p>Get ready to cut the cake!</p>
+    </div>
+
+    <!-- Celebration Image -->
+    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Celebration" class="celebration-image" id="celebrationImage">
 
     <!-- Audio Element for Birthday Sound -->
     <audio id="birthdayAudio" loop>
@@ -1355,16 +1520,30 @@
             document.getElementById('birthdayModal').classList.remove('active');
         });
 
-        // Play birthday sound
-        document.getElementById('playBirthdaySound').addEventListener('click', function() {
-            const audio = document.getElementById('birthdayAudio');
-            if (audio.paused) {
-                audio.play();
-                this.innerHTML = 'Pause Birthday Song';
-            } else {
-                audio.pause();
-                this.innerHTML = 'Play Birthday Song';
-            }
+        // Cut cake button
+        document.getElementById('cutCakeBtn').addEventListener('click', function() {
+            document.getElementById('birthdayModal').classList.remove('active');
+            document.getElementById('cakeContainer').classList.add('active');
+            
+            // Start countdown
+            let countdown = 10;
+            const countdownElement = document.getElementById('countdown');
+            const countdownInterval = setInterval(() => {
+                countdown--;
+                countdownElement.textContent = countdown;
+                
+                if (countdown <= 0) {
+                    clearInterval(countdownInterval);
+                    // Show celebration image and play sound
+                    document.getElementById('celebrationImage').classList.add('active');
+                    document.getElementById('birthdayAudio').play();
+                    
+                    // Hide cake after a delay
+                    setTimeout(() => {
+                        document.getElementById('cakeContainer').classList.remove('active');
+                    }, 3000);
+                }
+            }, 1000);
         });
 
         // Mobile Navigation Toggle
