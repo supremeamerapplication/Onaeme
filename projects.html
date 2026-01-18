@@ -197,75 +197,61 @@
             opacity: 0.9;
         }
 
-        /* ===== FILTER SECTION ===== */
-        .filter-section {
-            padding: 40px 0;
+        /* ===== SIMPLE FILTER BAR ===== */
+        .simple-filter {
+            padding: 30px 0;
             background: white;
-            position: sticky;
-            top: 90px;
-            z-index: 99;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        .filter-container {
+        .filter-row {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .filter-title h2 {
-            font-size: 1.5rem;
-            color: #0A2463;
-        }
-
-        .filter-controls {
-            display: flex;
             gap: 15px;
-            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
         }
 
-        .filter-btn {
+        .simple-filter-btn {
             padding: 10px 20px;
             background: #f1f5f9;
-            border: 2px solid transparent;
+            border: none;
             border-radius: 8px;
             color: #475569;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
         }
 
-        .filter-btn:hover,
-        .filter-btn.active {
+        .simple-filter-btn:hover,
+        .simple-filter-btn.active {
             background: linear-gradient(135deg, #0A2463 0%, #3E7BFA 100%);
             color: white;
-            border-color: #0A2463;
         }
 
-        .search-box {
+        .simple-search {
             position: relative;
             width: 300px;
         }
 
-        .search-input {
+        .simple-search-input {
             width: 100%;
-            padding: 12px 20px 12px 45px;
+            padding: 10px 15px 10px 40px;
             border: 2px solid #e2e8f0;
             border-radius: 8px;
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s;
         }
 
-        .search-input:focus {
+        .simple-search-input:focus {
             outline: none;
             border-color: #3E7BFA;
             box-shadow: 0 0 0 3px rgba(62, 123, 250, 0.1);
         }
 
-        .search-icon {
+        .simple-search-icon {
             position: absolute;
             left: 15px;
             top: 50%;
@@ -275,7 +261,7 @@
 
         /* ===== PROJECTS GRID ===== */
         .projects-section {
-            padding: 60px 0 100px;
+            padding: 40px 0 100px;
         }
 
         .projects-grid {
@@ -420,6 +406,7 @@
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
+            margin-bottom: 20px;
         }
 
         .detail-item {
@@ -437,47 +424,10 @@
             color: #3E7BFA;
         }
 
-        /* ===== PAGINATION ===== */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-top: 60px;
-        }
-
-        .page-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            background: white;
-            border: 2px solid #e2e8f0;
-            color: #475569;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .page-btn:hover {
-            background: #f1f5f9;
-            border-color: #cbd5e1;
-        }
-
-        .page-btn.active {
-            background: linear-gradient(135deg, #0A2463 0%, #3E7BFA 100%);
-            color: white;
-            border-color: #0A2463;
-        }
-
-        .page-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
         /* ===== LOAD MORE ===== */
         .load-more-section {
             text-align: center;
-            padding: 40px 0;
+            padding: 60px 0 40px;
         }
 
         .load-more-btn {
@@ -634,13 +584,9 @@
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
             
-            .filter-container {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .search-box {
+            .simple-search {
                 width: 100%;
+                margin-top: 10px;
             }
         }
 
@@ -699,6 +645,15 @@
             .modal-info {
                 padding: 25px;
             }
+            
+            .filter-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .simple-search {
+                width: 100%;
+            }
         }
 
         @media (max-width: 480px) {
@@ -719,7 +674,7 @@
                 font-size: 0.9rem;
             }
             
-            .filter-btn {
+            .simple-filter-btn {
                 padding: 8px 16px;
                 font-size: 0.9rem;
             }
@@ -730,6 +685,10 @@
             
             .project-title {
                 font-size: 1.2rem;
+            }
+            
+            .modal-image {
+                height: 250px;
             }
         }
     </style>
@@ -751,15 +710,12 @@
             <div class="nav-links" id="navLinks">
                 <a href="index.html"><i class="fas fa-home"></i> Home</a>
                 <a href="index.html#projects"><i class="fas fa-project-diagram"></i> Featured Projects</a>
-                <a href="#"><i class="fas fa-filter"></i> Filter Projects</a>
-                <a href="#all-projects"><i class="fas fa-eye"></i> View All</a>
+                <a href="#all-projects"><i class="fas fa-eye"></i> View All Projects</a>
                 <a href="index.html#contact"><i class="fas fa-phone"></i> Contact</a>
                 <a href="index.html" class="back-to-main">
-                <i class="fas fa-arrow-left"></i> Back to Main
+                    <i class="fas fa-arrow-left"></i> Back to Main
                 </a>
             </div>
-            
-            
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
@@ -796,18 +752,29 @@
         </div>
     </section>
 
-   
+    <!-- Simple Filter Bar -->
+    <section class="simple-filter">
+        <div class="container">
+            <div class="filter-row">
+                <button class="simple-filter-btn active" data-filter="all">All Projects</button>
+                <button class="simple-filter-btn" data-filter="residential">Residential</button>
+                <button class="simple-filter-btn" data-filter="commercial">Commercial</button>
+                <button class="simple-filter-btn" data-filter="industrial">Industrial</button>
+                <button class="simple-filter-btn" data-filter="interior">Interior Design</button>
+                <button class="simple-filter-btn" data-filter="kitchen">Kitchen</button>
+                <div class="simple-search">
+                    <i class="fas fa-search simple-search-icon"></i>
+                    <input type="text" class="simple-search-input" placeholder="Search projects...">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Projects Grid -->
     <section class="projects-section" id="all-projects">
         <div class="container">
             <div class="projects-grid" id="projectsGrid">
                 <!-- Projects will be loaded here by JavaScript -->
-            </div>
-            
-            <!-- Pagination -->
-            <div class="pagination" id="pagination">
-                <!-- Pagination will be generated by JavaScript -->
             </div>
             
             <!-- Load More Button -->
@@ -868,8 +835,8 @@
                     <ul>
                         <li><a href="index.html#projects">Featured Projects</a></li>
                         <li><a href="#all-projects">All Projects</a></li>
-                        <li><a href="#residential">Residential</a></li>
-                        <li><a href="#commercial">Commercial</a></li>
+                        <li><a href="#all-projects" onclick="filterByType('residential')">Residential</a></li>
+                        <li><a href="#all-projects" onclick="filterByType('commercial')">Commercial</a></li>
                     </ul>
                 </div>
                 
@@ -878,7 +845,7 @@
                     <ul>
                         <li><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> 29/10 Bauchi Road, Jos</li>
                         <li><i class="fas fa-phone" style="margin-right: 8px;"></i> 08064731042</li>
-                        <li><i class="fas fa-envelope" style="margin-right: 8px;"></i> dekontractorsgmail.com</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 8px;"></i> dekontractors@gmail.com</li>
                         <li><i class="fas fa-clock" style="margin-right: 8px;"></i> Mon-Fri: 8AM-6PM</li>
                     </ul>
                 </div>
@@ -892,140 +859,206 @@
 
     <script>
         // ====================
-        // PROJECTS DATA
+        // PROJECTS DATA - Enhanced with your images and details
         // ====================
         const projectsData = [
             {
                 id: 1,
-                title: "Residential Estate, Abuja",
+                title: "Luxury Residential Estate, Abuja",
                 type: "residential",
-                location: "plateau, jos",
+                location: "Abuja, FCT",
                 year: "2024",
-                image: "image: "IMG-20260117-WA0001.jpg", 
-                    description: "Exclusive gated residential building featuring  modern amenities, swimming pools, and smart home technology.",
+                image: "IMG-20260117-WA0001.jpg",
+                description: "Exclusive gated residential estate featuring 15 modern duplexes with smart home technology, swimming pools, landscaped gardens, and 24/7 security. Each unit includes premium finishes and energy-efficient systems.",
                 details: {
                     size: "5,000 sqm",
-                    units: "15 buildings",
+                    units: "15 Luxury Duplexes",
                     duration: "18 Months",
-                    status: "Completed"
+                    status: "Completed",
+                    value: "₦850 Million"
                 },
-                features: ["Smart Home Tech", "Swimming Pool", "Landscaped Gardens", "24/7 Security"]
+                features: ["Smart Home Automation", "Olympic-sized Swimming Pool", "Landscaped Gardens", "24/7 Security", "Underground Parking", "Solar Power System"]
             },
             {
                 id: 2,
-                title: "commercial development",
+                title: "Modern Shopping Complex, Abuja",
                 type: "commercial",
-                location: "Abuja, F.C.T",
+                location: "Abuja Central District",
                 year: "2025",
-                image: "image: "IMG-20260117-WA0027.jpg";
-                    description: "Modern 3-story shopping mall with 50 retail outlets, food court, cinema, and ample parking space.",
+                image: "IMG-20260117-WA0027.jpg",
+                description: "Three-story contemporary shopping mall featuring 50 retail outlets, food court with international cuisine, state-of-the-art cinema complex, and automated parking system for 200 vehicles.",
                 details: {
                     size: "10,000 sqm",
-                    floors: "3 Floors",
-                    shops: "50 Units",
-                    status: "ongoing"
+                    floors: "3 Levels",
+                    shops: "50 Retail Units",
+                    status: "Ongoing",
+                    parking: "200 Vehicles"
                 },
-                features: ["Food Court", "Cinema", "Underground Parking", "Retail Spaces"]
+                features: ["Food Court", "Cinema Complex", "Automated Parking", "Retail Spaces", "Food Court", "Central Air Conditioning"]
             },
-           
-            
             {
-                id: 5,
-                title: "Top-notch interiors finishing",
-                type: "healthcare",
+                id: 3,
+                title: "Premium Hospital Interiors, Jos",
+                type: "interior",
+                location: "Plateau, Jos",
                 year: "2024",
                 image: "IMG-20260117-WA0007.jpg",
-                image: "IMG-20260117-WA0008.jpg",
-                image: "IMG-20260117-WA0007.jpg",
-                description: "Comprehensive interiors finishing.",
+                description: "Comprehensive hospital interior finishing with anti-bacterial surfaces, modern patient rooms, efficient layout design, and premium medical-grade materials. Designed for both functionality and patient comfort.",
                 details: {
                     size: "4,200 sqm",
-                    beds: "50 Beds",
-                    wards: "5 Wards",
-                    status: "Completed"
+                    beds: "50 Patient Beds",
+                    wards: "5 Specialized Wards",
+                    status: "Completed",
+                    duration: "6 Months"
                 },
+                features: ["Anti-bacterial Surfaces", "Medical-grade Materials", "Efficient Layout", "Patient Comfort Design", "Modern Lighting", "Acoustic Treatment"]
             },
-            
-           
             {
-                id: 8,
-                title: "Modern concrete kitchen",
-                type: "educational",
+                id: 4,
+                title: "Modern Living Room Interior",
+                type: "interior",
+                location: "Plateau, Jos",
+                year: "2024",
+                image: "IMG-20260117-WA0008.jpg",
+                description: "Contemporary living room featuring wall-mounted TV, sleek grey console, geometric wall panels, marble-effect backdrop, warm ambient lighting, and carefully selected decor for an elegant minimalist aesthetic.",
+                details: {
+                    size: "35 sqm",
+                    style: "Modern Minimalist",
+                    status: "Completed",
+                    duration: "3 Weeks"
+                },
+                features: ["Geometric Wall Panels", "Marble-effect Backdrop", "Ambient Lighting", "Minimalist Design", "Premium Furniture", "Custom Decor"]
+            },
+            {
+                id: 5,
+                title: "Industrial Concrete Kitchen",
+                type: "kitchen",
+                location: "Plateau, Jos",
                 year: "2025",
-                image: "IMG-20260117-WA0019.jpg"
-                    description: "Modern concrete kitchen.",
+                image: "IMG-20260117-WA0019.jpg",
+                description: "Modern industrial-style kitchen with polished concrete countertops, custom cabinetry, stainless steel appliances, and innovative storage solutions. Features heat-resistant and water-resistant surfaces.",
                 details: {
                     size: "5m x 7m",
-                status: "Completed"
+                    style: "Industrial Modern",
+                    status: "Completed",
+                    countertop: "Polished Concrete"
                 },
-                features: ["high durablity", "modern and industrial Aesthetic", "heat and water resistance", "Eco-friendly Options"]
+                features: ["Heat-resistant Surfaces", "Water-resistant Finish", "Custom Cabinetry", "Stainless Steel Appliances", "Innovative Storage", "Industrial Lighting"]
             },
             {
-                id: 9,
+                id: 6,
                 title: "Warehouse Complex, Kano",
                 type: "industrial",
-                location: "Kano, Kano",
+                location: "Kano Industrial Zone",
                 year: "2023",
                 image: "IMG-20260117-WA0011.jpg",
-                     image: "IMG-20260117-WA0014.jpg",
-                     image: "IMG-20260117-WA0015.jpg",
-                    description: "A modern minimalist living room featuring a wall-mounted flat-screen Tv, sleek grey Tv console, geometric wall pannels, marble-effect backdrop, and  warming lighting,Natural tones , and comptempotart decor for a stylish and elegant home interirorinterior",
+                description: "Large-scale warehouse facility with 7,500 sqm storage space, modern racking system, climate-controlled sections, loading bays, and advanced security systems. Ideal for distribution and logistics operations.",
                 details: {
                     size: "7,500 sqm",
                     capacity: "5000 Pallets",
-                    bays: "10 Bays",
-                    status: "Completed"
+                    bays: "10 Loading Bays",
+                    status: "Completed",
+                    value: "₦650 Million"
                 },
-                features: ["Storage Racks", "Distribution Center", "Cold Storage", "Security"]
+                features: ["Storage Rack Systems", "Climate Control", "Distribution Center", "Cold Storage", "Security Systems", "Fire Protection"]
             },
             {
-                id: 10,
-                title: "Apartment Complex, Benin",
+                id: 7,
+                title: "Apartment Building, Benin City",
                 type: "residential",
-                location: "Benin, Edo",
+                location: "Benin, Edo State",
                 year: "2022",
-                image: "IMG-20260117-WA0018.jpg"
-                    description: "Modern apartment building with 30 units, recreational facilities, and secure parking.",
+                image: "IMG-20260117-WA0018.jpg",
+                description: "Modern 5-story apartment complex with 30 luxury units, featuring gym, playground, secure underground parking, and concierge services. Each apartment includes premium finishes and balconies.",
                 details: {
                     size: "4,000 sqm",
                     units: "30 Apartments",
-                    floors: "5 Floors",
-                    status: "Completed"
+                    floors: "5 Stories",
+                    status: "Completed",
+                    amenities: "Gym, Playground, Parking"
                 },
-                features: ["Gym", "Playground", "Parking", "Security"]
+                features: ["Fitness Center", "Children's Playground", "Secure Parking", "Concierge", "Balconies", "Premium Finishes"]
             },
             {
-                id: 11,
-                title: "Hotel Extension, Abuja",
+                id: 8,
+                title: "Hotel Extension & Renovation, Abuja",
                 type: "commercial",
                 location: "Abuja, FCT",
                 year: "2024",
-                image: "IMG-20260117-WA0020.jpg"
-                    description: "5-star hotel extension with additional 100 rooms, conference center, and luxury amenities.",
+                image: "IMG-20260117-WA0020.jpg",
+                description: "Extension of 5-star hotel with 100 additional luxury rooms, conference center, spa facilities, and multiple restaurants. Features premium finishes, smart room controls, and luxury amenities.",
                 details: {
                     size: "8,000 sqm",
-                    rooms: "100 Rooms",
-                    conference: "3 Halls",
-                    status: "finished"
+                    rooms: "100 Luxury Rooms",
+                    conference: "3 Halls (500 pax)",
+                    status: "Finished",
+                    rating: "5-Star"
                 },
-                features: ["Luxury Rooms", "Conference Center", "Restaurants", "Spa"]
+                features: ["Luxury Suites", "Conference Facilities", "Spa & Wellness", "Fine Dining", "Smart Room Controls", "Premium Finishes"]
+            },
+            {
+                id: 9,
+                title: "Modern Kitchen Finishing",
+                type: "kitchen",
+                location: "Plateau, Jos",
+                year: "2024",
+                image: "IMG-20260117-WA0021.jpg",
+                description: "Contemporary kitchen design featuring custom cabinetry, quartz countertops, premium appliances, and efficient workflow layout. Combines functionality with aesthetic appeal for modern living.",
+                details: {
+                    size: "6m x 4m",
+                    countertop: "Quartz Surface",
+                    status: "Completed",
+                    style: "Contemporary"
+                },
+                features: ["Custom Cabinetry", "Quartz Countertops", "Premium Appliances", "Efficient Layout", "Task Lighting", "Soft-close Drawers"]
+            },
+            {
+                id: 10,
+                title: "Ireland-style Kitchen Design",
+                type: "kitchen",
+                location: "Plateau, Jos",
+                year: "2023",
+                image: "IMG-20260117-WA0022.jpg",
+                description: "Luxury kitchen inspired by Irish design principles featuring premium materials, elegant finishes, custom cabinetry, and modern appliances. Combines traditional warmth with contemporary functionality.",
+                details: {
+                    size: "7m x 6m",
+                    style: "Irish Contemporary",
+                    status: "Completed",
+                    materials: "Premium Woods & Stones"
+                },
+                features: ["Premium Materials", "Elegant Design", "Custom Cabinetry", "Modern Appliances", "Ample Storage", "Designer Lighting"]
+            },
+            {
+                id: 11,
+                title: "Warehouse Interior View",
+                type: "industrial",
+                location: "Kano Industrial Zone",
+                year: "2023",
+                image: "IMG-20260117-WA0014.jpg",
+                description: "Interior view of industrial warehouse showing modern storage systems, efficient layout, and high ceilings for maximum storage capacity. Designed for optimal logistics and material handling.",
+                details: {
+                    size: "3,500 sqm Section",
+                    ceiling: "12m Height",
+                    status: "Completed",
+                    system: "Modern Racking"
+                },
+                features: ["High Ceilings", "Efficient Layout", "Modern Racking", "Good Lighting", "Wide Aisles", "Safety Features"]
             },
             {
                 id: 12,
-                title: "ireland kitchen finishing",
-                type: "Apartment",
-                location: "",
+                title: "Alternative Warehouse View",
+                type: "industrial",
+                location: "Kano Industrial Zone",
                 year: "2023",
-                image: "IMG-20260117-WA0022.jpg" 
-                    image: "IMG-20260117-WA0023.jpg" 
-                image: "IMG-20260117-WA0022.jpg" 
-                    description: "luxury kitchen finishing.",
+                image: "IMG-20260117-WA0015.jpg",
+                description: "Alternative interior perspective of warehouse facility showing loading area, storage organization, and operational workflow. Designed for efficient material flow and inventory management.",
                 details: {
-                    size: "7m x 6m",
-                
-                    status: "Completed"
+                    size: "2,800 sqm Section",
+                    loading: "4 Bays",
+                    status: "Completed",
+                    workflow: "Optimized Layout"
                 },
-                
+                features: ["Loading Bays", "Organized Storage", "Efficient Workflow", "Safety Markings", "Ventilation System", "Fire Safety"]
             }
         ];
 
@@ -1034,17 +1067,16 @@
         // ====================
         let currentFilter = 'all';
         let currentPage = 1;
-        const projectsPerPage = 6;
+        const projectsPerPage = 8;
         let filteredProjects = [...projectsData];
 
         // ====================
         // DOM ELEMENTS
         // ====================
         const projectsGrid = document.getElementById('projectsGrid');
-        const pagination = document.getElementById('pagination');
         const loadMoreBtn = document.getElementById('loadMoreBtn');
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const searchInput = document.querySelector('.search-input');
+        const filterBtns = document.querySelectorAll('.simple-filter-btn');
+        const searchInput = document.querySelector('.simple-search-input');
         const projectModal = document.getElementById('projectModal');
         const modalClose = document.getElementById('modalClose');
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -1056,6 +1088,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderProjects();
             setupEventListeners();
+            updateLoadMoreButton();
         });
 
         // ====================
@@ -1123,14 +1156,15 @@
                 const searchMatch = !searchTerm || 
                     project.title.toLowerCase().includes(searchTerm) ||
                     project.location.toLowerCase().includes(searchTerm) ||
-                    project.description.toLowerCase().includes(searchTerm);
+                    project.description.toLowerCase().includes(searchTerm) ||
+                    project.type.toLowerCase().includes(searchTerm);
                 
                 return typeMatch && searchMatch;
             });
             
             currentPage = 1;
             renderProjects();
-            updatePagination();
+            updateLoadMoreButton();
         }
 
         // ====================
@@ -1149,6 +1183,7 @@
                         <p style="color: #94a3b8;">Try adjusting your filters or search terms</p>
                     </div>
                 `;
+                loadMoreBtn.style.display = 'none';
                 return;
             }
             
@@ -1174,21 +1209,22 @@
                         <div class="project-location">
                             <i class="fas fa-map-marker-alt"></i> ${project.location}
                         </div>
-                        <p class="project-description">${project.description}</p>
+                        <p class="project-description">${truncateText(project.description, 120)}</p>
                         <div class="project-details">
                             <span class="detail-item">
-                                <i class="fas fa-ruler-combined"></i> ${project.details.size}
+                                <i class="fas fa-ruler-combined"></i> ${project.details.size || 'N/A'}
                             </span>
+                            ${project.details.units ? `
                             <span class="detail-item">
-                                <i class="fas fa-${project.type === 'residential' ? 'home' : 'building'}"></i> 
-                                ${project.type === 'residential' ? project.details.units : project.type === 'commercial' ? project.details.shops || project.details.rooms : project.details.capacity}
+                                <i class="fas fa-${project.type === 'residential' ? 'home' : 'building'}"></i> ${project.details.units}
                             </span>
+                            ` : ''}
                             <span class="detail-item">
-                                <i class="fas fa-${project.details.status === 'Completed' ? 'check-circle' : 'clock'}"></i> ${project.details.status}
+                                <i class="fas fa-${project.details.status === 'Completed' || project.details.status === 'Finished' ? 'check-circle' : 'clock'}"></i> ${project.details.status}
                             </span>
                         </div>
-                        <button class="back-to-main" onclick="viewProjectDetails(${project.id})" style="margin-top: 20px; width: 100%; justify-content: center;">
-                            <i class="fas fa-eye"></i> View Details
+                        <button class="back-to-main" onclick="viewProjectDetails(${project.id})" style="margin-top: 10px; width: 100%; justify-content: center;">
+                            <i class="fas fa-eye"></i> View Full Details
                         </button>
                     </div>
                 </div>
@@ -1197,7 +1233,7 @@
             // Add click event to each project card
             document.querySelectorAll('.project-card').forEach(card => {
                 card.addEventListener('click', (e) => {
-                    if (!e.target.closest('.project-share')) {
+                    if (!e.target.closest('.project-share') && !e.target.closest('.back-to-main')) {
                         const projectId = card.dataset.id;
                         viewProjectDetails(projectId);
                     }
@@ -1212,78 +1248,25 @@
             currentPage++;
             renderProjects();
             updateLoadMoreButton();
+            
+            // Smooth scroll to show new projects
+            setTimeout(() => {
+                projectsGrid.lastElementChild.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
         }
 
         // ====================
         // UPDATE LOAD MORE BUTTON
         // ====================
         function updateLoadMoreButton() {
-            const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
-            if (currentPage >= totalPages) {
+            const totalProjects = filteredProjects.length;
+            const shownProjects = currentPage * projectsPerPage;
+            
+            if (shownProjects >= totalProjects) {
                 loadMoreBtn.style.display = 'none';
             } else {
                 loadMoreBtn.style.display = 'inline-flex';
             }
-        }
-
-        // ====================
-        // UPDATE PAGINATION
-        // ====================
-        function updatePagination() {
-            const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
-            
-            if (totalPages <= 1) {
-                pagination.style.display = 'none';
-                return;
-            }
-            
-            pagination.style.display = 'flex';
-            
-            let paginationHTML = '';
-            
-            // Previous button
-            paginationHTML += `
-                <button class="page-btn" onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-            `;
-            
-            // Page numbers
-            for (let i = 1; i <= totalPages; i++) {
-                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
-                    paginationHTML += `
-                        <button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">
-                            ${i}
-                        </button>
-                    `;
-                } else if (i === currentPage - 2 || i === currentPage + 2) {
-                    paginationHTML += `<span style="color: #64748b;">...</span>`;
-                }
-            }
-            
-            // Next button
-            paginationHTML += `
-                <button class="page-btn" onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            `;
-            
-            pagination.innerHTML = paginationHTML;
-        }
-
-        // ====================
-        // CHANGE PAGE
-        // ====================
-        window.changePage = function(page) {
-            if (page < 1 || page > Math.ceil(filteredProjects.length / projectsPerPage)) return;
-            
-            currentPage = page;
-            renderProjects();
-            updatePagination();
-            updateLoadMoreButton();
-            
-            // Scroll to projects section
-            document.getElementById('all-projects').scrollIntoView({ behavior: 'smooth' });
         }
 
         // ====================
@@ -1303,48 +1286,53 @@
             document.getElementById('modalInfo').innerHTML = `
                 <div style="margin-bottom: 30px;">
                     <span class="project-type" style="display: inline-block; margin-bottom: 15px;">
-                        <i class="fas fa-${getTypeIcon(project.type)}"></i> ${project.type}
+                        <i class="fas fa-${getTypeIcon(project.type)}"></i> ${project.type.charAt(0).toUpperCase() + project.type.slice(1)} Project
                     </span>
                     <h2 style="font-size: 2rem; color: #0A2463; margin-bottom: 10px;">${project.title}</h2>
                     <div class="project-location" style="margin-bottom: 20px;">
-                        <i class="fas fa-map-marker-alt"></i> ${project.location} • ${project.year}
+                        <i class="fas fa-map-marker-alt"></i> ${project.location} • <i class="fas fa-calendar"></i> ${project.year}
                     </div>
                 </div>
                 
                 <div style="margin-bottom: 30px;">
-                    <h3 style="color: #0A2463; margin-bottom: 15px;">Project Description</h3>
-                    <p style="color: #64748b; line-height: 1.8;">${project.description}</p>
+                    <h3 style="color: #0A2463; margin-bottom: 15px; font-size: 1.2rem;">Project Description</h3>
+                    <p style="color: #64748b; line-height: 1.8; font-size: 1rem;">${project.description}</p>
                 </div>
                 
                 <div style="margin-bottom: 30px;">
-                    <h3 style="color: #0A2463; margin-bottom: 15px;">Project Details</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <h3 style="color: #0A2463; margin-bottom: 15px; font-size: 1.2rem;">Project Specifications</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
                         ${Object.entries(project.details).map(([key, value]) => `
                             <div style="background: #f1f5f9; padding: 15px; border-radius: 8px;">
-                                <div style="color: #64748b; font-size: 0.9rem; margin-bottom: 5px;">${formatKey(key)}</div>
-                                <div style="color: #0A2463; font-weight: 600;">${value}</div>
+                                <div style="color: #64748b; font-size: 0.9rem; margin-bottom: 5px; text-transform: capitalize;">${key.replace(/_/g, ' ')}</div>
+                                <div style="color: #0A2463; font-weight: 600; font-size: 1rem;">${value}</div>
                             </div>
                         `).join('')}
                     </div>
                 </div>
                 
                 <div style="margin-bottom: 30px;">
-                    <h3 style="color: #0A2463; margin-bottom: 15px;">Key Features</h3>
+                    <h3 style="color: #0A2463; margin-bottom: 15px; font-size: 1.2rem;">Key Features & Amenities</h3>
                     <div style="display: flex; gap: 10px; flex-wrap: wrap;">
                         ${project.features.map(feature => `
-                            <span style="background: linear-gradient(135deg, #FFB400 0%, #FFE566 100%); color: #1e293b; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 500;">
-                                ${feature}
+                            <span style="background: linear-gradient(135deg, #FFB400 0%, #FFE566 100%); color: #1e293b; padding: 10px 18px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; display: flex; align-items: center; gap: 5px;">
+                                <i class="fas fa-check-circle"></i> ${feature}
                             </span>
                         `).join('')}
                     </div>
                 </div>
                 
-                <button class="back-to-main" onclick="shareProject(${project.id})" style="margin-right: 15px;">
-                    <i class="fas fa-share-alt"></i> Share Project
-                </button>
-                <button class="back-to-main" onclick="window.open('index.html#contact', '_blank')">
-                    <i class="fas fa-phone"></i> Inquire About Similar Project
-                </button>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <button class="back-to-main" onclick="shareProject(${project.id})">
+                        <i class="fas fa-share-alt"></i> Share This Project
+                    </button>
+                    <button class="back-to-main" onclick="window.location.href='index.html#contact'">
+                        <i class="fas fa-phone"></i> Request Similar Project
+                    </button>
+                    <button class="back-to-main" onclick="projectModal.style.display='none'">
+                        <i class="fas fa-times"></i> Close
+                    </button>
+                </div>
             `;
             
             // Show modal
@@ -1360,9 +1348,9 @@
             if (!project) return;
             
             const shareData = {
-                title: `${project.title} - Dekontractors Project`,
-                text: `Check out this ${project.type} project by Dekontractors: ${project.description}`,
-                url: window.location.href + `#project-${project.id}`
+                title: `${project.title} - Dekontractors Nig. Ltd`,
+                text: `Check out this ${project.type} project by Dekontractors: ${project.description.substring(0, 100)}...`,
+                url: window.location.href
             };
             
             if (navigator.share) {
@@ -1377,6 +1365,24 @@
         }
 
         // ====================
+        // FILTER BY TYPE (for footer links)
+        // ====================
+        window.filterByType = function(type) {
+            filterBtns.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.filter === type) {
+                    btn.classList.add('active');
+                }
+            });
+            currentFilter = type;
+            currentPage = 1;
+            filterProjects();
+            
+            // Scroll to projects section
+            document.getElementById('all-projects').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ====================
         // UTILITY FUNCTIONS
         // ====================
         function getTypeIcon(type) {
@@ -1384,18 +1390,29 @@
                 residential: 'home',
                 commercial: 'building',
                 industrial: 'industry',
-                educational: 'graduation-cap',
-                healthcare: 'hospital'
+                interior: 'paint-roller',
+                kitchen: 'utensils',
+                apartment: 'building'
             };
             return icons[type] || 'building';
         }
 
-        function formatKey(key) {
-            return key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1');
+        function truncateText(text, maxLength) {
+            if (text.length <= maxLength) return text;
+            return text.substring(0, maxLength) + '...';
         }
 
         function copyToClipboard(text, message) {
             navigator.clipboard.writeText(text).then(() => {
+                showNotification(message);
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
                 showNotification(message);
             });
         }
@@ -1436,11 +1453,6 @@
                 style.remove();
             }, 3000);
         }
-
-        // Initial render
-        renderProjects();
-        updatePagination();
-        updateLoadMoreButton();
     </script>
 </body>
 </html>
