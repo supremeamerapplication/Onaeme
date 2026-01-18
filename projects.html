@@ -754,11 +754,12 @@
                 <a href="#"><i class="fas fa-filter"></i> Filter Projects</a>
                 <a href="#all-projects"><i class="fas fa-eye"></i> View All</a>
                 <a href="index.html#contact"><i class="fas fa-phone"></i> Contact</a>
+                <a href="index.html" class="back-to-main">
+                <i class="fas fa-arrow-left"></i> Back to Main
+                </a>
             </div>
             
-            <a href="index.html" class="back-to-main">
-                <i class="fas fa-arrow-left"></i> Back to Main
-            </a>
+            
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
@@ -795,31 +796,7 @@
         </div>
     </section>
 
-    <!-- Filter Section -->
-    <section class="filter-section">
-        <div class="container">
-            <div class="filter-container">
-                <div class="filter-title">
-                    <h2>Filter Projects</h2>
-                    <p style="color: #64748b; font-size: 0.9rem; margin-top: 5px;">Browse by category, location, or year</p>
-                </div>
-                
-                <div class="filter-controls">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="residential">Residential</button>
-                    <button class="filter-btn" data-filter="commercial">Commercial</button>
-                    <button class="filter-btn" data-filter="industrial">Industrial</button>
-                    <button class="filter-btn" data-filter="educational">Educational</button>
-                    <button class="filter-btn" data-filter="healthcare">Healthcare</button>
-                </div>
-                
-                <div class="search-box">
-                    <i class="fas fa-search search-icon"></i>
-                    <input type="text" class="search-input" placeholder="Search projects by name or location...">
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Projects Grid -->
     <section class="projects-section" id="all-projects">
@@ -901,7 +878,7 @@
                     <ul>
                         <li><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> 29/10 Bauchi Road, Jos</li>
                         <li><i class="fas fa-phone" style="margin-right: 8px;"></i> 08064731042</li>
-                        <li><i class="fas fa-envelope" style="margin-right: 8px;"></i> projects@dekontractors.com</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 8px;"></i> dekontractorsgmail.com</li>
                         <li><i class="fas fa-clock" style="margin-right: 8px;"></i> Mon-Fri: 8AM-6PM</li>
                     </ul>
                 </div>
@@ -920,15 +897,15 @@
         const projectsData = [
             {
                 id: 1,
-                title: "Luxury Villa Estate, Abuja",
+                title: "Residential Estate, Abuja",
                 type: "residential",
-                location: "Abuja, FCT",
+                location: "plateau, jos",
                 year: "2024",
-                image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                description: "Exclusive gated community featuring 15 luxury villas with modern amenities, swimming pools, and smart home technology.",
+                image: "image: "IMG-20260117-WA0001.jpg", 
+                    description: "Exclusive gated residential building featuring  modern amenities, swimming pools, and smart home technology.",
                 details: {
                     size: "5,000 sqm",
-                    units: "15 Villas",
+                    units: "15 buildings",
                     duration: "18 Months",
                     status: "Completed"
                 },
@@ -936,115 +913,52 @@
             },
             {
                 id: 2,
-                title: "Shopping Mall Complex, Lagos",
+                title: "commercial development",
                 type: "commercial",
-                location: "Lekki, Lagos",
-                year: "2023",
-                image: "https://images.unsplash.com/photo-1487956382158-bb926046304a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                description: "Modern 3-story shopping mall with 50 retail outlets, food court, cinema, and ample parking space.",
+                location: "Abuja, F.C.T",
+                year: "2025",
+                image: "image: "IMG-20260117-WA0027.jpg";
+                    description: "Modern 3-story shopping mall with 50 retail outlets, food court, cinema, and ample parking space.",
                 details: {
                     size: "10,000 sqm",
                     floors: "3 Floors",
                     shops: "50 Units",
-                    status: "Completed"
+                    status: "ongoing"
                 },
                 features: ["Food Court", "Cinema", "Underground Parking", "Retail Spaces"]
             },
-            {
-                id: 3,
-                title: "Bottling Plant, Ibadan",
-                type: "industrial",
-                location: "Ibadan, Oyo",
-                year: "2022",
-                image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                description: "State-of-the-art bottling and packaging facility with production capacity of 50,000 units per day.",
-                details: {
-                    size: "8,500 sqm",
-                    capacity: "50K/day",
-                    lines: "3 Lines",
-                    status: "Completed"
-                },
-                features: ["Production Line", "Quality Control", "Warehouse", "Loading Bay"]
-            },
-            {
-                id: 4,
-                title: "University Library, Zaria",
-                type: "educational",
-                location: "Zaria, Kaduna",
-                year: "2023",
-                image: "https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                description: "Modern academic library with digital resources, study areas, and capacity for 500 students.",
-                details: {
-                    size: "3,500 sqm",
-                    capacity: "500 Seats",
-                    books: "50K+",
-                    status: "Completed"
-                },
-                features: ["Digital Library", "Study Rooms", "Conference Hall", "Cafeteria"]
-            },
+           
+            
             {
                 id: 5,
-                title: "Medical Center, Port Harcourt",
+                title: "Top-notch interiors finishing",
                 type: "healthcare",
-                location: "Port Harcourt, Rivers",
                 year: "2024",
-                image: "https://images.unsplash.com/photo-1516549655669-df6654e447d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                description: "Comprehensive medical facility with outpatient clinic, diagnostic center, and 50-bed capacity.",
+                image: "IMG-20260117-WA0007.jpg",
+                image: "IMG-20260117-WA0008.jpg",
+                image: "IMG-20260117-WA0007.jpg",
+                description: "Comprehensive interiors finishing.",
                 details: {
                     size: "4,200 sqm",
                     beds: "50 Beds",
                     wards: "5 Wards",
                     status: "Completed"
                 },
-                features: ["Diagnostic Center", "Outpatient Clinic", "Pharmacy", "Emergency Unit"]
             },
-            {
-                id: 6,
-                title: "Office Tower, Enugu",
-                type: "commercial",
-                location: "Enugu, Enugu",
-                year: "2022",
-                image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                description: "15-story commercial tower with office spaces, conference facilities, and panoramic city views.",
-                details: {
-                    size: "12,000 sqm",
-                    floors: "15 Floors",
-                    offices: "80 Units",
-                    status: "Completed"
-                },
-                features: ["Panoramic Views", "Conference Rooms", "Cafeteria", "Gym"]
-            },
-            {
-                id: 7,
-                title: "Resort & Spa, Calabar",
-                type: "commercial",
-                location: "Calabar, Cross River",
-                year: "2023",
-                image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                description: "Luxury beachfront resort with 40 rooms, spa, restaurant, and event facilities.",
-                details: {
-                    size: "6,500 sqm",
-                    rooms: "40 Rooms",
-                    pools: "2 Pools",
-                    status: "Completed"
-                },
-                features: ["Beachfront", "Spa Center", "Restaurant", "Event Hall"]
-            },
+            
+           
             {
                 id: 8,
-                title: "Secondary School, Jos",
+                title: "Modern concrete kitchen",
                 type: "educational",
-                location: "Jos, Plateau",
-                year: "2021",
-                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                description: "Modern secondary school complex with classrooms, laboratories, library, and sports facilities.",
+                year: "2025",
+                image: "IMG-20260117-WA0019.jpg"
+                    description: "Modern concrete kitchen.",
                 details: {
-                    size: "3,000 sqm",
-                    classrooms: "24 Rooms",
-                    labs: "5 Labs",
-                    status: "Completed"
+                    size: "5m x 7m",
+                status: "Completed"
                 },
-                features: ["Science Labs", "Library", "Sports Field", "Computer Lab"]
+                features: ["high durablity", "modern and industrial Aesthetic", "heat and water resistance", "Eco-friendly Options"]
             },
             {
                 id: 9,
@@ -1052,8 +966,10 @@
                 type: "industrial",
                 location: "Kano, Kano",
                 year: "2023",
-                image: "https://images.unsplash.com/photo-1483721310020-03333e577cce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                description: "Large-scale warehouse facility with storage, distribution center, and loading bays.",
+                image: "IMG-20260117-WA0011.jpg",
+                     image: "IMG-20260117-WA0014.jpg",
+                     image: "IMG-20260117-WA0015.jpg",
+                    description: "A modern minimalist living room featuring a wall-mounted flat-screen Tv, sleek grey Tv console, geometric wall pannels, marble-effect backdrop, and  warming lighting,Natural tones , and comptempotart decor for a stylish and elegant home interirorinterior",
                 details: {
                     size: "7,500 sqm",
                     capacity: "5000 Pallets",
@@ -1068,8 +984,8 @@
                 type: "residential",
                 location: "Benin, Edo",
                 year: "2022",
-                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                description: "Modern apartment building with 30 units, recreational facilities, and secure parking.",
+                image: "IMG-20260117-WA0018.jpg"
+                    description: "Modern apartment building with 30 units, recreational facilities, and secure parking.",
                 details: {
                     size: "4,000 sqm",
                     units: "30 Apartments",
@@ -1084,31 +1000,32 @@
                 type: "commercial",
                 location: "Abuja, FCT",
                 year: "2024",
-                image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                description: "5-star hotel extension with additional 100 rooms, conference center, and luxury amenities.",
+                image: "IMG-20260117-WA0020.jpg"
+                    description: "5-star hotel extension with additional 100 rooms, conference center, and luxury amenities.",
                 details: {
                     size: "8,000 sqm",
                     rooms: "100 Rooms",
                     conference: "3 Halls",
-                    status: "Ongoing"
+                    status: "finished"
                 },
                 features: ["Luxury Rooms", "Conference Center", "Restaurants", "Spa"]
             },
             {
                 id: 12,
-                title: "Community Hospital, Maiduguri",
-                type: "healthcare",
-                location: "Maiduguri, Borno",
+                title: "ireland kitchen finishing",
+                type: "Apartment",
+                location: "",
                 year: "2023",
-                image: "https://images.unsplash.com/photo-1516549655669-df6654e447d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                description: "Community healthcare facility providing essential medical services to local residents.",
+                image: "IMG-20260117-WA0022.jpg" 
+                    image: "IMG-20260117-WA0023.jpg" 
+                image: "IMG-20260117-WA0022.jpg" 
+                    description: "luxury kitchen finishing.",
                 details: {
-                    size: "2,500 sqm",
-                    beds: "30 Beds",
-                    clinics: "4 Clinics",
+                    size: "7m x 6m",
+                
                     status: "Completed"
                 },
-                features: ["Maternity Ward", "Laboratory", "Pharmacy", "Outpatient"]
+                
             }
         ];
 
