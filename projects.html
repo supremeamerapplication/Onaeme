@@ -3,692 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Other Projects - Dekontractors Nig. Ltd</title>
-    <meta name="description" content="Explore our diverse portfolio of construction projects across Nigeria including residential, commercial, and industrial developments.">
-    
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <title>Our Projects - Dekontractors Nig. Ltd</title>
     <style>
-        /* ===== RESET & BASE ===== */
+        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f8fafc;
-            color: #1e293b;
+            color: #333;
+            background-color: #f5f5f5;
         }
-
-        .container {
-            max-width: 1400px;
+        
+        /* Header */
+        header {
+            background-color: #0A2463;
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-        }
-
-        /* ===== HEADER ===== */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 20px 0;
-            box-shadow: 0 2px 20px rgba(10, 36, 99, 0.1);
-        }
-
-        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
             text-decoration: none;
+            color: white;
         }
-
-        .logo-image {
+        
+        .logo img {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #0A2463 0%, #3E7BFA 100%);
-            border-radius: 8px;
+            border-radius: 5px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+        }
+        
+        .logo span {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        nav {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 5px;
+            gap: 20px;
         }
-
-        .logo-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .logo-text h1 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #0A2463;
-            line-height: 1.2;
-        }
-
-        .logo-text span {
-            font-size: 0.7rem;
-            color: #64748b;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .nav-links a {
+        
+        nav a {
+            color: white;
             text-decoration: none;
-            color: #475569;
-            font-weight: 500;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 12px;
-            border-radius: 6px;
-            transition: all 0.3s;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
-
-        .nav-links a:hover {
-            background: rgba(10, 36, 99, 0.08);
-            color: #0A2463;
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
-
-        .back-to-main {
-            background: linear-gradient(135deg, #FFB400 0%, #FFE566 100%);
-            color: #1e293b;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
-        }
-
-        .back-to-main:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 180, 0, 0.3);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #0A2463;
-            cursor: pointer;
-        }
-
-        /* ===== HERO BANNER ===== */
-        .hero-banner {
-            padding: 140px 0 80px;
-            background: linear-gradient(135deg, rgba(10, 36, 99, 0.95), rgba(62, 123, 250, 0.85)),
-                        url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
+        
+        /* Hero Section */
+        .hero {
+            background-color: #1a3b8b;
             color: white;
             text-align: center;
+            padding: 150px 20px 80px;
+            margin-top: 90px;
         }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
+        
+        .hero h1 {
+            font-size: 42px;
             margin-bottom: 20px;
-            line-height: 1.1;
         }
-
-        .hero-content p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 40px;
             opacity: 0.9;
         }
-
-        .stats-bar {
+        
+        .stats {
             display: flex;
             justify-content: center;
             gap: 50px;
-            margin-top: 50px;
             flex-wrap: wrap;
+            margin-top: 40px;
         }
-
+        
         .stat-item {
             text-align: center;
         }
-
+        
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 36px;
+            font-weight: bold;
             color: #FFB400;
-            margin-bottom: 5px;
+            display: block;
         }
-
+        
         .stat-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 14px;
             opacity: 0.9;
         }
-
-        /* ===== SIMPLE FILTER BAR ===== */
-        .simple-filter {
-            padding: 30px 0;
-            background: white;
-            border-bottom: 1px solid #e2e8f0;
+        
+        /* Projects Section */
+        .projects-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
         }
-
-        .filter-row {
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0A2463;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Project Categories */
+        .categories {
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            align-items: center;
             justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
         }
-
-        .simple-filter-btn {
-            padding: 10px 20px;
-            background: #f1f5f9;
+        
+        .category-btn {
+            background-color: #e9ecef;
             border: none;
-            border-radius: 8px;
-            color: #475569;
-            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 25px;
             cursor: pointer;
+            font-size: 14px;
             transition: all 0.3s;
-            font-family: 'Inter', sans-serif;
         }
-
-        .simple-filter-btn:hover,
-        .simple-filter-btn.active {
-            background: linear-gradient(135deg, #0A2463 0%, #3E7BFA 100%);
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background-color: #0A2463;
             color: white;
         }
-
-        .simple-search {
-            position: relative;
-            width: 300px;
-        }
-
-        .simple-search-input {
-            width: 100%;
-            padding: 10px 15px 10px 40px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-        }
-
-        .simple-search-input:focus {
-            outline: none;
-            border-color: #3E7BFA;
-            box-shadow: 0 0 0 3px rgba(62, 123, 250, 0.1);
-        }
-
-        .simple-search-icon {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #64748b;
-        }
-
-        /* ===== PROJECTS GRID ===== */
-        .projects-section {
-            padding: 40px 0 100px;
-        }
-
+        
+        /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
+            margin-bottom: 60px;
         }
-
+        
         .project-card {
-            background: white;
-            border-radius: 15px;
+            background-color: white;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.6s ease forwards;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
+        
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(10, 36, 99, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
-
+        
         .project-image {
+            width: 100%;
             height: 250px;
             overflow: hidden;
-            position: relative;
         }
-
+        
         .project-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
         }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
+        
+        .project-content {
+            padding: 20px;
         }
-
-        .project-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 6px 15px;
+        
+        .project-category {
+            display: inline-block;
+            background-color: #e9ecef;
+            padding: 5px 15px;
             border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 12px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .project-title {
+            font-size: 20px;
+            margin-bottom: 10px;
             color: #0A2463;
         }
-
-        .project-share {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: #0A2463;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-        }
-
-        .project-share:hover {
-            background: #0A2463;
-            color: white;
-            transform: scale(1.1);
-        }
-
-        .project-info {
-            padding: 25px;
-        }
-
-        .project-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        
+        .project-location {
+            color: #666;
+            font-size: 14px;
             margin-bottom: 15px;
-        }
-
-        .project-type {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 5px;
-            padding: 5px 12px;
-            background: #f1f5f9;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #475569;
         }
-
-        .project-year {
-            color: #64748b;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .project-title {
-            font-size: 1.4rem;
-            color: #0A2463;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .project-location {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #64748b;
-            font-size: 0.9rem;
+        
+        .project-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
             margin-bottom: 15px;
         }
-
-        .project-location i {
-            color: #FFB400;
-        }
-
-        .project-description {
-            color: #64748b;
-            margin-bottom: 20px;
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
-
+        
         .project-details {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
-            margin-bottom: 20px;
         }
-
+        
         .detail-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            padding: 6px 12px;
-            background: #f1f5f9;
+            background-color: #f8f9fa;
+            padding: 8px 15px;
             border-radius: 20px;
-            font-size: 0.8rem;
-            color: #475569;
+            font-size: 12px;
+            color: #666;
         }
-
-        .detail-item i {
-            color: #3E7BFA;
-        }
-
-        /* ===== LOAD MORE ===== */
-        .load-more-section {
-            text-align: center;
-            padding: 60px 0 40px;
-        }
-
-        .load-more-btn {
-            background: linear-gradient(135deg, #FFB400 0%, #FFE566 100%);
-            color: #1e293b;
-            border: none;
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s;
-        }
-
-        .load-more-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 180, 0, 0.3);
-        }
-
-        /* ===== PROJECT MODAL ===== */
-        .project-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1001;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 20px;
-            max-width: 1000px;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            animation: modalSlideIn 0.3s ease;
-        }
-
-        @keyframes modalSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            z-index: 2;
-        }
-
-        .modal-close:hover {
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        .modal-image {
-            height: 400px;
-            overflow: hidden;
-        }
-
-        .modal-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .modal-info {
-            padding: 40px;
-        }
-
-        /* ===== FOOTER ===== */
+        
+        /* Footer */
         footer {
-            background: #0A2463;
+            background-color: #0A2463;
             color: white;
             padding: 60px 0 30px;
         }
-
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
-
-        .footer-logo .logo-text h1 {
-            color: white;
+        
+        .footer-logo h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
         }
-
-        .footer-logo .logo-text span {
-            color: rgba(255, 255, 255, 0.8);
+        
+        .footer-logo p {
+            opacity: 0.8;
+            font-size: 14px;
         }
-
+        
         .footer-links h4 {
-            font-size: 1.1rem;
+            font-size: 18px;
             margin-bottom: 20px;
             color: #FFB400;
         }
-
+        
         .footer-links ul {
             list-style: none;
         }
-
+        
         .footer-links li {
             margin-bottom: 10px;
         }
-
+        
         .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
+            color: white;
             text-decoration: none;
-            transition: color 0.3s;
+            opacity: 0.8;
+            transition: opacity 0.3s;
         }
-
+        
         .footer-links a:hover {
-            color: #FFB400;
+            opacity: 1;
         }
-
+        
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+            font-size: 14px;
         }
-
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 992px) {
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-            
-            .simple-search {
-                width: 100%;
-                margin-top: 10px;
-            }
-        }
-
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 90px;
-                left: 0;
-                width: 100%;
-                background: white;
+            .header-container {
                 flex-direction: column;
-                padding: 20px;
                 gap: 15px;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                z-index: 999;
             }
             
-            .nav-links.show {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
             }
             
-            .hero-content h1 {
-                font-size: 2.3rem;
+            .hero {
+                padding: 120px 20px 60px;
             }
             
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-            
-            .stats-bar {
-                gap: 30px;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
+            .hero h1 {
+                font-size: 32px;
             }
             
             .projects-grid {
                 grid-template-columns: 1fr;
             }
             
-            .modal-content {
-                max-height: 80vh;
-            }
-            
-            .modal-info {
-                padding: 25px;
-            }
-            
-            .filter-row {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .simple-search {
-                width: 100%;
+            .stats {
+                gap: 30px;
             }
         }
-
+        
         @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2rem;
+            .hero h1 {
+                font-size: 28px;
             }
             
-            .hero-banner {
-                padding: 120px 0 60px;
-            }
-            
-            .logo-text h1 {
-                font-size: 1.3rem;
-            }
-            
-            .back-to-main {
-                padding: 8px 16px;
-                font-size: 0.9rem;
-            }
-            
-            .simple-filter-btn {
-                padding: 8px 16px;
-                font-size: 0.9rem;
+            .stats {
+                gap: 20px;
             }
             
             .stat-number {
-                font-size: 1.8rem;
-            }
-            
-            .project-title {
-                font-size: 1.2rem;
-            }
-            
-            .modal-image {
-                height: 250px;
+                font-size: 28px;
             }
         }
     </style>
@@ -696,763 +373,323 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="container header-container">
+        <div class="header-container">
             <a href="index.html" class="logo">
-                <div class="logo-image">
-                    <img src="file_00000000d3d4720ab491ef5cc601a455.png" alt="Dekontractors Logo">
-                </div>
-                <div class="logo-text">
+                <img src="file_00000000d3d4720ab491ef5cc601a455.png" alt="Dekontractors Logo">
+                <div>
                     <h1>Dekontractors</h1>
                     <span>Project Portfolio</span>
                 </div>
             </a>
             
-            <div class="nav-links" id="navLinks">
-                <a href="index.html"><i class="fas fa-home"></i> Home</a>
-                <a href="index.html#projects"><i class="fas fa-project-diagram"></i> Featured Projects</a>
-                <a href="#all-projects"><i class="fas fa-eye"></i> View All Projects</a>
-                <a href="index.html#contact"><i class="fas fa-phone"></i> Contact</a>
-                <a href="index.html" class="back-to-main">
-                    <i class="fas fa-arrow-left"></i> Back to Main
-                </a>
-            </div>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="index.html" style="background-color: #FFB400; color: #333;">Back to Main</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Banner -->
-    <section class="hero-banner">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Our Project Portfolio</h1>
-                <p>Showcasing our extensive construction projects across Nigeria. From residential buildings to industrial complexes, explore our journey of building excellence.</p>
-                
-                <div class="stats-bar">
-                    <div class="stat-item">
-                        <div class="stat-number">80+</div>
-                        <div class="stat-label">Total Projects</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">25+</div>
-                        <div class="stat-label">Cities Covered</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">12</div>
-                        <div class="stat-label">Project Types</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Simple Filter Bar -->
-    <section class="simple-filter">
-        <div class="container">
-            <div class="filter-row">
-                <button class="simple-filter-btn active" data-filter="all">All Projects</button>
-                <button class="simple-filter-btn" data-filter="residential">Residential</button>
-                <button class="simple-filter-btn" data-filter="commercial">Commercial</button>
-                <button class="simple-filter-btn" data-filter="industrial">Industrial</button>
-                <button class="simple-filter-btn" data-filter="interior">Interior Design</button>
-                <button class="simple-filter-btn" data-filter="kitchen">Kitchen</button>
-                <div class="simple-search">
-                    <i class="fas fa-search simple-search-icon"></i>
-                    <input type="text" class="simple-search-input" placeholder="Search projects...">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Grid -->
-    <section class="projects-section" id="all-projects">
-        <div class="container">
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be loaded here by JavaScript -->
-            </div>
+            <h1>Our Project Portfolio</h1>
+            <p>Showcasing our extensive construction projects across Nigeria. From residential buildings to industrial complexes, explore our journey of building excellence.</p>
             
-            <!-- Load More Button -->
-            <div class="load-more-section">
-                <button class="load-more-btn" id="loadMoreBtn">
-                    <i class="fas fa-sync-alt"></i> Load More Projects
-                </button>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">80+</span>
+                    <span class="stat-label">Total Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Cities Covered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Project Types</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Project Modal -->
-    <div class="project-modal" id="projectModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="modal-image" id="modalImage">
-                <!-- Image will be loaded here -->
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="section-title">
+            <h2>Our Completed Projects</h2>
+            <p>Browse through our diverse portfolio of successfully completed construction projects</p>
+        </div>
+
+        <!-- Project Categories -->
+        <div class="categories">
+            <button class="category-btn active">All Projects</button>
+            <button class="category-btn">Residential</button>
+            <button class="category-btn">Commercial</button>
+            <button class="category-btn">Industrial</button>
+            <button class="category-btn">Interior Design</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="IMG-20260117-WA0001.jpg" alt="Residential Estate">
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Residential</span>
+                    <h3 class="project-title">Luxury Residential Estate, Abuja</h3>
+                    <div class="project-location">
+                        📍 Abuja, FCT
+                    </div>
+                    <p class="project-description">
+                        Exclusive gated residential estate with 15 modern duplexes featuring smart home technology, swimming pools, and premium amenities.
+                    </p>
+                    <div class="project-details">
+                        <span class="detail-item">5,000 sqm</span>
+                        <span class="detail-item">15 Units</span>
+                        <span class="detail-item">2024</span>
+                    </div>
+                </div>
             </div>
-            <div class="modal-info" id="modalInfo">
-                <!-- Content will be loaded here -->
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="IMG-20260117-WA0027.jpg" alt="Shopping Complex">
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Commercial</span>
+                    <h3 class="project-title">Modern Shopping Complex, Abuja</h3>
+                    <div class="project-location">
+                        📍 Abuja Central District
+                    </div>
+                    <p class="project-description">
+                        Three-story shopping mall with 50 retail outlets, food court, cinema complex, and automated parking system.
+                    </p>
+                    <div class="project-details">
+                        <span class="detail-item">10,000 sqm</span>
+                        <span class="detail-item">3 Floors</span>
+                        <span class="detail-item">2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="IMG-20260117-WA0007.jpg" alt="Hospital Interiors">
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Interior Design</span>
+                    <h3 class="project-title">Hospital Interior Design, Jos</h3>
+                    <div class="project-location">
+                        📍 Plateau, Jos
+                    </div>
+                    <p class="project-description">
+                        Comprehensive hospital interior finishing with anti-bacterial surfaces and modern medical-grade materials.
+                    </p>
+                    <div class="project-details">
+                        <span class="detail-item">4,200 sqm</span>
+                        <span class="detail-item">50 Beds</span>
+                        <span class="detail-item">2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="IMG-20260117-WA0019.jpg" alt="Concrete Kitchen">
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Interior Design</span>
+                    <h3 class="project-title">Industrial Concrete Kitchen</h3>
+                    <div class="project-location">
+                        📍 Plateau, Jos
+                    </div>
+                    <p class="project-description">
+                        Modern industrial-style kitchen with polished concrete countertops and custom cabinetry.
+                    </p>
+                    <div class="project-details">
+                        <span class="detail-item">5m x 7m</span>
+                        <span class="detail-item">Concrete</span>
+                        <span class="detail-item">2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="IMG-20260117-WA0011.jpg" alt="Warehouse Complex">
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Industrial</span>
+                    <h3 class="project-title">Warehouse Complex, Kano</h3>
+                    <div class="project-location">
+                        📍 Kano Industrial Zone
+                    </div>
+                    <p class="project-description">
+                        Large-scale warehouse facility with modern racking system and climate-controlled sections.
+                    </p>
+                    <div class="project-details">
+                        <span class="detail-item">7,500 sqm</span>
+                        <span class="detail-item">5000 Pallets</span>
+                        <span class="detail-item">2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="IMG-20260117-WA0018.jpg" alt="Apartment Building">
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Residential</span>
+                    <h3 class="project-title">Apartment Building, Benin City</h3>
+                    <div class="project-location">
+                        📍 Benin, Edo State
+                    </div>
+                    <p class="project-description">
+                        5-story apartment complex with 30 luxury units, gym, playground, and secure parking.
+                    </p>
+                    <div class="project-details">
+                        <span class="detail-item">4,000 sqm</span>
+                        <span class="detail-item">30 Apartments</span>
+                        <span class="detail-item">2022</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="IMG-20260117-WA0020.jpg" alt="Hotel Extension">
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Commercial</span>
+                    <h3 class="project-title">Hotel Extension & Renovation, Abuja</h3>
+                    <div class="project-location">
+                        📍 Abuja, FCT
+                    </div>
+                    <p class="project-description">
+                        5-star hotel extension with 100 luxury rooms, conference center, and spa facilities.
+                    </p>
+                    <div class="project-details">
+                        <span class="detail-item">8,000 sqm</span>
+                        <span class="detail-item">100 Rooms</span>
+                        <span class="detail-item">2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="IMG-20260117-WA0022.jpg" alt="Kitchen Design">
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Interior Design</span>
+                    <h3 class="project-title">Ireland-style Kitchen Design</h3>
+                    <div class="project-location">
+                        📍 Plateau, Jos
+                    </div>
+                    <p class="project-description">
+                        Luxury kitchen inspired by Irish design principles with premium materials and custom cabinetry.
+                    </p>
+                    <div class="project-details">
+                        <span class="detail-item">7m x 6m</span>
+                        <span class="detail-item">Premium</span>
+                        <span class="detail-item">2023</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="index.html" class="logo">
-                        <div class="logo-image">
-                            <img src="file_00000000d3d4720ab491ef5cc601a455.png" alt="Dekontractors Logo">
-                        </div>
-                        <div class="logo-text">
-                            <h1>Dekontractors</h1>
-                            <span>Engineering Excellence</span>
-                        </div>
-                    </a>
-                    <p style="margin-top: 15px; opacity: 0.8;">
-                        Building Nigeria's future through quality construction and innovative design since 2010.
-                    </p>
+                    <h3>Dekontractors Nig. Ltd</h3>
+                    <p>Building Nigeria's future through quality construction and innovative design since 2010.</p>
                 </div>
                 
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="#projects">Projects</a></li>
                         <li><a href="index.html#services">Services</a></li>
-                        <li><a href="index.html#ceo">CEO Profile</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
-                    <h4>Projects</h4>
+                    <h4>Project Types</h4>
                     <ul>
-                        <li><a href="index.html#projects">Featured Projects</a></li>
-                        <li><a href="#all-projects">All Projects</a></li>
-                        <li><a href="#all-projects" onclick="filterByType('residential')">Residential</a></li>
-                        <li><a href="#all-projects" onclick="filterByType('commercial')">Commercial</a></li>
+                        <li><a href="#projects">Residential</a></li>
+                        <li><a href="#projects">Commercial</a></li>
+                        <li><a href="#projects">Industrial</a></li>
+                        <li><a href="#projects">Interior Design</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
                     <h4>Contact Info</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> 29/10 Bauchi Road, Jos</li>
-                        <li><i class="fas fa-phone" style="margin-right: 8px;"></i> 08064731042</li>
-                        <li><i class="fas fa-envelope" style="margin-right: 8px;"></i> dekontractors@gmail.com</li>
-                        <li><i class="fas fa-clock" style="margin-right: 8px;"></i> Mon-Fri: 8AM-6PM</li>
+                    <ul class="contact-info">
+                        <li>📍 29/10 Bauchi Road, Jos</li>
+                        <li>📞 08064731042</li>
+                        <li>✉️ dekontractors@gmail.com</li>
+                        <li>🕐 Mon-Fri: 8AM-6PM</li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Dekontractors Nig. Ltd. All Rights Reserved. | <a href="#" style="color: #FFB400; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: #FFB400; text-decoration: none;">Terms of Service</a></p>
+                <p>&copy; 2025 Dekontractors Nig. Ltd. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Simple CSS for category buttons (they don't filter, just style) -->
+    <style>
+        .category-btn {
+            cursor: pointer;
+        }
+        
+        .category-btn.active {
+            background-color: #0A2463;
+            color: white;
+        }
+        
+        /* Simple hover effect for all buttons */
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+
+    <!-- Simple script for button active state -->
     <script>
-        // ====================
-        // PROJECTS DATA - Enhanced with your images and details
-        // ====================
-        const projectsData = [
-            {
-                id: 1,
-                title: "Luxury Residential Estate, Abuja",
-                type: "residential",
-                location: "Abuja, FCT",
-                year: "2024",
-                image: "IMG-20260117-WA0001.jpg",
-                description: "Exclusive gated residential estate featuring 15 modern duplexes with smart home technology, swimming pools, landscaped gardens, and 24/7 security. Each unit includes premium finishes and energy-efficient systems.",
-                details: {
-                    size: "5,000 sqm",
-                    units: "15 Luxury Duplexes",
-                    duration: "18 Months",
-                    status: "Completed",
-                    value: "₦850 Million"
-                },
-                features: ["Smart Home Automation", "Olympic-sized Swimming Pool", "Landscaped Gardens", "24/7 Security", "Underground Parking", "Solar Power System"]
-            },
-            {
-                id: 2,
-                title: "Modern Shopping Complex, Abuja",
-                type: "commercial",
-                location: "Abuja Central District",
-                year: "2025",
-                image: "IMG-20260117-WA0027.jpg",
-                description: "Three-story contemporary shopping mall featuring 50 retail outlets, food court with international cuisine, state-of-the-art cinema complex, and automated parking system for 200 vehicles.",
-                details: {
-                    size: "10,000 sqm",
-                    floors: "3 Levels",
-                    shops: "50 Retail Units",
-                    status: "Ongoing",
-                    parking: "200 Vehicles"
-                },
-                features: ["Food Court", "Cinema Complex", "Automated Parking", "Retail Spaces", "Food Court", "Central Air Conditioning"]
-            },
-            {
-                id: 3,
-                title: "Premium Hospital Interiors, Jos",
-                type: "interior",
-                location: "Plateau, Jos",
-                year: "2024",
-                image: "IMG-20260117-WA0007.jpg",
-                description: "Comprehensive hospital interior finishing with anti-bacterial surfaces, modern patient rooms, efficient layout design, and premium medical-grade materials. Designed for both functionality and patient comfort.",
-                details: {
-                    size: "4,200 sqm",
-                    beds: "50 Patient Beds",
-                    wards: "5 Specialized Wards",
-                    status: "Completed",
-                    duration: "6 Months"
-                },
-                features: ["Anti-bacterial Surfaces", "Medical-grade Materials", "Efficient Layout", "Patient Comfort Design", "Modern Lighting", "Acoustic Treatment"]
-            },
-            {
-                id: 4,
-                title: "Modern Living Room Interior",
-                type: "interior",
-                location: "Plateau, Jos",
-                year: "2024",
-                image: "IMG-20260117-WA0008.jpg",
-                description: "Contemporary living room featuring wall-mounted TV, sleek grey console, geometric wall panels, marble-effect backdrop, warm ambient lighting, and carefully selected decor for an elegant minimalist aesthetic.",
-                details: {
-                    size: "35 sqm",
-                    style: "Modern Minimalist",
-                    status: "Completed",
-                    duration: "3 Weeks"
-                },
-                features: ["Geometric Wall Panels", "Marble-effect Backdrop", "Ambient Lighting", "Minimalist Design", "Premium Furniture", "Custom Decor"]
-            },
-            {
-                id: 5,
-                title: "Industrial Concrete Kitchen",
-                type: "kitchen",
-                location: "Plateau, Jos",
-                year: "2025",
-                image: "IMG-20260117-WA0019.jpg",
-                description: "Modern industrial-style kitchen with polished concrete countertops, custom cabinetry, stainless steel appliances, and innovative storage solutions. Features heat-resistant and water-resistant surfaces.",
-                details: {
-                    size: "5m x 7m",
-                    style: "Industrial Modern",
-                    status: "Completed",
-                    countertop: "Polished Concrete"
-                },
-                features: ["Heat-resistant Surfaces", "Water-resistant Finish", "Custom Cabinetry", "Stainless Steel Appliances", "Innovative Storage", "Industrial Lighting"]
-            },
-            {
-                id: 6,
-                title: "Warehouse Complex, Kano",
-                type: "industrial",
-                location: "Kano Industrial Zone",
-                year: "2023",
-                image: "IMG-20260117-WA0011.jpg",
-                description: "Large-scale warehouse facility with 7,500 sqm storage space, modern racking system, climate-controlled sections, loading bays, and advanced security systems. Ideal for distribution and logistics operations.",
-                details: {
-                    size: "7,500 sqm",
-                    capacity: "5000 Pallets",
-                    bays: "10 Loading Bays",
-                    status: "Completed",
-                    value: "₦650 Million"
-                },
-                features: ["Storage Rack Systems", "Climate Control", "Distribution Center", "Cold Storage", "Security Systems", "Fire Protection"]
-            },
-            {
-                id: 7,
-                title: "Apartment Building, Benin City",
-                type: "residential",
-                location: "Benin, Edo State",
-                year: "2022",
-                image: "IMG-20260117-WA0018.jpg",
-                description: "Modern 5-story apartment complex with 30 luxury units, featuring gym, playground, secure underground parking, and concierge services. Each apartment includes premium finishes and balconies.",
-                details: {
-                    size: "4,000 sqm",
-                    units: "30 Apartments",
-                    floors: "5 Stories",
-                    status: "Completed",
-                    amenities: "Gym, Playground, Parking"
-                },
-                features: ["Fitness Center", "Children's Playground", "Secure Parking", "Concierge", "Balconies", "Premium Finishes"]
-            },
-            {
-                id: 8,
-                title: "Hotel Extension & Renovation, Abuja",
-                type: "commercial",
-                location: "Abuja, FCT",
-                year: "2024",
-                image: "IMG-20260117-WA0020.jpg",
-                description: "Extension of 5-star hotel with 100 additional luxury rooms, conference center, spa facilities, and multiple restaurants. Features premium finishes, smart room controls, and luxury amenities.",
-                details: {
-                    size: "8,000 sqm",
-                    rooms: "100 Luxury Rooms",
-                    conference: "3 Halls (500 pax)",
-                    status: "Finished",
-                    rating: "5-Star"
-                },
-                features: ["Luxury Suites", "Conference Facilities", "Spa & Wellness", "Fine Dining", "Smart Room Controls", "Premium Finishes"]
-            },
-            {
-                id: 9,
-                title: "Modern Kitchen Finishing",
-                type: "kitchen",
-                location: "Plateau, Jos",
-                year: "2024",
-                image: "IMG-20260117-WA0021.jpg",
-                description: "Contemporary kitchen design featuring custom cabinetry, quartz countertops, premium appliances, and efficient workflow layout. Combines functionality with aesthetic appeal for modern living.",
-                details: {
-                    size: "6m x 4m",
-                    countertop: "Quartz Surface",
-                    status: "Completed",
-                    style: "Contemporary"
-                },
-                features: ["Custom Cabinetry", "Quartz Countertops", "Premium Appliances", "Efficient Layout", "Task Lighting", "Soft-close Drawers"]
-            },
-            {
-                id: 10,
-                title: "Ireland-style Kitchen Design",
-                type: "kitchen",
-                location: "Plateau, Jos",
-                year: "2023",
-                image: "IMG-20260117-WA0022.jpg",
-                description: "Luxury kitchen inspired by Irish design principles featuring premium materials, elegant finishes, custom cabinetry, and modern appliances. Combines traditional warmth with contemporary functionality.",
-                details: {
-                    size: "7m x 6m",
-                    style: "Irish Contemporary",
-                    status: "Completed",
-                    materials: "Premium Woods & Stones"
-                },
-                features: ["Premium Materials", "Elegant Design", "Custom Cabinetry", "Modern Appliances", "Ample Storage", "Designer Lighting"]
-            },
-            {
-                id: 11,
-                title: "Warehouse Interior View",
-                type: "industrial",
-                location: "Kano Industrial Zone",
-                year: "2023",
-                image: "IMG-20260117-WA0014.jpg",
-                description: "Interior view of industrial warehouse showing modern storage systems, efficient layout, and high ceilings for maximum storage capacity. Designed for optimal logistics and material handling.",
-                details: {
-                    size: "3,500 sqm Section",
-                    ceiling: "12m Height",
-                    status: "Completed",
-                    system: "Modern Racking"
-                },
-                features: ["High Ceilings", "Efficient Layout", "Modern Racking", "Good Lighting", "Wide Aisles", "Safety Features"]
-            },
-            {
-                id: 12,
-                title: "Alternative Warehouse View",
-                type: "industrial",
-                location: "Kano Industrial Zone",
-                year: "2023",
-                image: "IMG-20260117-WA0015.jpg",
-                description: "Alternative interior perspective of warehouse facility showing loading area, storage organization, and operational workflow. Designed for efficient material flow and inventory management.",
-                details: {
-                    size: "2,800 sqm Section",
-                    loading: "4 Bays",
-                    status: "Completed",
-                    workflow: "Optimized Layout"
-                },
-                features: ["Loading Bays", "Organized Storage", "Efficient Workflow", "Safety Markings", "Ventilation System", "Fire Safety"]
-            }
-        ];
-
-        // ====================
-        // STATE MANAGEMENT
-        // ====================
-        let currentFilter = 'all';
-        let currentPage = 1;
-        const projectsPerPage = 8;
-        let filteredProjects = [...projectsData];
-
-        // ====================
-        // DOM ELEMENTS
-        // ====================
-        const projectsGrid = document.getElementById('projectsGrid');
-        const loadMoreBtn = document.getElementById('loadMoreBtn');
-        const filterBtns = document.querySelectorAll('.simple-filter-btn');
-        const searchInput = document.querySelector('.simple-search-input');
-        const projectModal = document.getElementById('projectModal');
-        const modalClose = document.getElementById('modalClose');
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        // ====================
-        // INITIALIZATION
-        // ====================
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProjects();
-            setupEventListeners();
-            updateLoadMoreButton();
+        // Simple script to handle category button active state
+        document.querySelectorAll('.category-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                // Add active class to clicked button
+                this.classList.add('active');
+            });
         });
-
-        // ====================
-        // EVENT LISTENERS
-        // ====================
-        function setupEventListeners() {
-            // Filter buttons
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    currentFilter = btn.dataset.filter;
-                    currentPage = 1;
-                    filterProjects();
-                });
-            });
-
-            // Search input
-            searchInput.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
-                filterProjects(searchTerm);
-            });
-
-            // Load more button
-            loadMoreBtn.addEventListener('click', loadMoreProjects);
-
-            // Modal close
-            modalClose.addEventListener('click', () => {
-                projectModal.style.display = 'none';
-            });
-
-            // Close modal on outside click
-            projectModal.addEventListener('click', (e) => {
-                if (e.target === projectModal) {
-                    projectModal.style.display = 'none';
-                }
-            });
-
-            // Mobile menu
-            mobileMenuBtn.addEventListener('click', () => {
-                navLinks.classList.toggle('show');
-                mobileMenuBtn.innerHTML = navLinks.classList.contains('show') 
-                    ? '<i class="fas fa-times"></i>' 
-                    : '<i class="fas fa-bars"></i>';
-            });
-
-            // Close mobile menu on link click
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('show');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                });
-            });
-        }
-
-        // ====================
-        // FILTER PROJECTS
-        // ====================
-        function filterProjects(searchTerm = '') {
-            filteredProjects = projectsData.filter(project => {
-                // Type filter
-                const typeMatch = currentFilter === 'all' || project.type === currentFilter;
-                
-                // Search filter
-                const searchMatch = !searchTerm || 
-                    project.title.toLowerCase().includes(searchTerm) ||
-                    project.location.toLowerCase().includes(searchTerm) ||
-                    project.description.toLowerCase().includes(searchTerm) ||
-                    project.type.toLowerCase().includes(searchTerm);
-                
-                return typeMatch && searchMatch;
-            });
-            
-            currentPage = 1;
-            renderProjects();
-            updateLoadMoreButton();
-        }
-
-        // ====================
-        // RENDER PROJECTS
-        // ====================
-        function renderProjects() {
-            const startIndex = (currentPage - 1) * projectsPerPage;
-            const endIndex = startIndex + projectsPerPage;
-            const projectsToShow = filteredProjects.slice(0, endIndex);
-            
-            if (projectsToShow.length === 0) {
-                projectsGrid.innerHTML = `
-                    <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
-                        <i class="fas fa-search" style="font-size: 3rem; color: #cbd5e1; margin-bottom: 20px;"></i>
-                        <h3 style="color: #64748b; margin-bottom: 10px;">No projects found</h3>
-                        <p style="color: #94a3b8;">Try adjusting your filters or search terms</p>
-                    </div>
-                `;
-                loadMoreBtn.style.display = 'none';
-                return;
-            }
-            
-            projectsGrid.innerHTML = projectsToShow.map(project => `
-                <div class="project-card" data-type="${project.type}" data-id="${project.id}">
-                    <div class="project-image">
-                        <img src="${project.image}" alt="${project.title}" onerror="this.src='https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                        <div class="project-badge">
-                            ${project.type.charAt(0).toUpperCase() + project.type.slice(1)}
-                        </div>
-                        <button class="project-share" onclick="shareProject(${project.id})">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-meta">
-                            <span class="project-type">
-                                <i class="fas fa-${getTypeIcon(project.type)}"></i> ${project.type}
-                            </span>
-                            <span class="project-year">${project.year}</span>
-                        </div>
-                        <h3 class="project-title">${project.title}</h3>
-                        <div class="project-location">
-                            <i class="fas fa-map-marker-alt"></i> ${project.location}
-                        </div>
-                        <p class="project-description">${truncateText(project.description, 120)}</p>
-                        <div class="project-details">
-                            <span class="detail-item">
-                                <i class="fas fa-ruler-combined"></i> ${project.details.size || 'N/A'}
-                            </span>
-                            ${project.details.units ? `
-                            <span class="detail-item">
-                                <i class="fas fa-${project.type === 'residential' ? 'home' : 'building'}"></i> ${project.details.units}
-                            </span>
-                            ` : ''}
-                            <span class="detail-item">
-                                <i class="fas fa-${project.details.status === 'Completed' || project.details.status === 'Finished' ? 'check-circle' : 'clock'}"></i> ${project.details.status}
-                            </span>
-                        </div>
-                        <button class="back-to-main" onclick="viewProjectDetails(${project.id})" style="margin-top: 10px; width: 100%; justify-content: center;">
-                            <i class="fas fa-eye"></i> View Full Details
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-            
-            // Add click event to each project card
-            document.querySelectorAll('.project-card').forEach(card => {
-                card.addEventListener('click', (e) => {
-                    if (!e.target.closest('.project-share') && !e.target.closest('.back-to-main')) {
-                        const projectId = card.dataset.id;
-                        viewProjectDetails(projectId);
-                    }
-                });
-            });
-        }
-
-        // ====================
-        // LOAD MORE PROJECTS
-        // ====================
-        function loadMoreProjects() {
-            currentPage++;
-            renderProjects();
-            updateLoadMoreButton();
-            
-            // Smooth scroll to show new projects
-            setTimeout(() => {
-                projectsGrid.lastElementChild.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }, 100);
-        }
-
-        // ====================
-        // UPDATE LOAD MORE BUTTON
-        // ====================
-        function updateLoadMoreButton() {
-            const totalProjects = filteredProjects.length;
-            const shownProjects = currentPage * projectsPerPage;
-            
-            if (shownProjects >= totalProjects) {
-                loadMoreBtn.style.display = 'none';
-            } else {
-                loadMoreBtn.style.display = 'inline-flex';
-            }
-        }
-
-        // ====================
-        // VIEW PROJECT DETAILS
-        // ====================
-        window.viewProjectDetails = function(projectId) {
-            const project = projectsData.find(p => p.id == projectId);
-            
-            if (!project) return;
-            
-            // Set modal image
-            document.getElementById('modalImage').innerHTML = `
-                <img src="${project.image}" alt="${project.title}" onerror="this.src='https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-            `;
-            
-            // Set modal info
-            document.getElementById('modalInfo').innerHTML = `
-                <div style="margin-bottom: 30px;">
-                    <span class="project-type" style="display: inline-block; margin-bottom: 15px;">
-                        <i class="fas fa-${getTypeIcon(project.type)}"></i> ${project.type.charAt(0).toUpperCase() + project.type.slice(1)} Project
-                    </span>
-                    <h2 style="font-size: 2rem; color: #0A2463; margin-bottom: 10px;">${project.title}</h2>
-                    <div class="project-location" style="margin-bottom: 20px;">
-                        <i class="fas fa-map-marker-alt"></i> ${project.location} • <i class="fas fa-calendar"></i> ${project.year}
-                    </div>
-                </div>
-                
-                <div style="margin-bottom: 30px;">
-                    <h3 style="color: #0A2463; margin-bottom: 15px; font-size: 1.2rem;">Project Description</h3>
-                    <p style="color: #64748b; line-height: 1.8; font-size: 1rem;">${project.description}</p>
-                </div>
-                
-                <div style="margin-bottom: 30px;">
-                    <h3 style="color: #0A2463; margin-bottom: 15px; font-size: 1.2rem;">Project Specifications</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                        ${Object.entries(project.details).map(([key, value]) => `
-                            <div style="background: #f1f5f9; padding: 15px; border-radius: 8px;">
-                                <div style="color: #64748b; font-size: 0.9rem; margin-bottom: 5px; text-transform: capitalize;">${key.replace(/_/g, ' ')}</div>
-                                <div style="color: #0A2463; font-weight: 600; font-size: 1rem;">${value}</div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-                
-                <div style="margin-bottom: 30px;">
-                    <h3 style="color: #0A2463; margin-bottom: 15px; font-size: 1.2rem;">Key Features & Amenities</h3>
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        ${project.features.map(feature => `
-                            <span style="background: linear-gradient(135deg, #FFB400 0%, #FFE566 100%); color: #1e293b; padding: 10px 18px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; display: flex; align-items: center; gap: 5px;">
-                                <i class="fas fa-check-circle"></i> ${feature}
-                            </span>
-                        `).join('')}
-                    </div>
-                </div>
-                
-                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <button class="back-to-main" onclick="shareProject(${project.id})">
-                        <i class="fas fa-share-alt"></i> Share This Project
-                    </button>
-                    <button class="back-to-main" onclick="window.location.href='index.html#contact'">
-                        <i class="fas fa-phone"></i> Request Similar Project
-                    </button>
-                    <button class="back-to-main" onclick="projectModal.style.display='none'">
-                        <i class="fas fa-times"></i> Close
-                    </button>
-                </div>
-            `;
-            
-            // Show modal
-            projectModal.style.display = 'flex';
-        }
-
-        // ====================
-        // SHARE PROJECT
-        // ====================
-        window.shareProject = async function(projectId) {
-            const project = projectsData.find(p => p.id == projectId);
-            
-            if (!project) return;
-            
-            const shareData = {
-                title: `${project.title} - Dekontractors Nig. Ltd`,
-                text: `Check out this ${project.type} project by Dekontractors: ${project.description.substring(0, 100)}...`,
-                url: window.location.href
-            };
-            
-            if (navigator.share) {
-                try {
-                    await navigator.share(shareData);
-                } catch (error) {
-                    copyToClipboard(shareData.url, 'Project link copied to clipboard!');
-                }
-            } else {
-                copyToClipboard(shareData.url, 'Project link copied to clipboard!');
-            }
-        }
-
-        // ====================
-        // FILTER BY TYPE (for footer links)
-        // ====================
-        window.filterByType = function(type) {
-            filterBtns.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.dataset.filter === type) {
-                    btn.classList.add('active');
-                }
-            });
-            currentFilter = type;
-            currentPage = 1;
-            filterProjects();
-            
-            // Scroll to projects section
-            document.getElementById('all-projects').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // ====================
-        // UTILITY FUNCTIONS
-        // ====================
-        function getTypeIcon(type) {
-            const icons = {
-                residential: 'home',
-                commercial: 'building',
-                industrial: 'industry',
-                interior: 'paint-roller',
-                kitchen: 'utensils',
-                apartment: 'building'
-            };
-            return icons[type] || 'building';
-        }
-
-        function truncateText(text, maxLength) {
-            if (text.length <= maxLength) return text;
-            return text.substring(0, maxLength) + '...';
-        }
-
-        function copyToClipboard(text, message) {
-            navigator.clipboard.writeText(text).then(() => {
-                showNotification(message);
-            }).catch(() => {
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = text;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                showNotification(message);
-            });
-        }
-
-        function showNotification(message) {
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                bottom: 30px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: #0A2463;
-                color: white;
-                padding: 12px 24px;
-                border-radius: 8px;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-                z-index: 10000;
-                font-weight: 500;
-                animation: fadeInOut 3s ease;
-            `;
-            
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes fadeInOut {
-                    0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
-                    20% { opacity: 1; transform: translateX(-50%) translateY(0); }
-                    80% { opacity: 1; transform: translateX(-50%) translateY(0); }
-                    100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            notification.textContent = message;
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.remove();
-                style.remove();
-            }, 3000);
-        }
     </script>
 </body>
 </html>
